@@ -124,28 +124,28 @@ while True:
     dt=clock.tick(60)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            ser.close()
+            #ser.close()
             #GPIO.cleanup()
             pygame.quit()
             exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_q:
-                ser.close()
+                #ser.close()
                 #GPIO.cleanup()
                 pygame.quit()
                 exit()
-            """
+            
             if event.key == pygame.K_LEFT:
                 Left=True
             if event.key == pygame.K_RIGHT:
                 Right=True
-            """
+            
             if event.key == pygame.K_a and not Start:
-                ser.write(b"/START")
+                #ser.write(b"/START")
                 time.sleep(2)
-                ser.write(b"/ARM")
+                #ser.write(b"/ARM")
                 time.sleep(60)
-                ser.write(b"/STOP")
+                #ser.write(b"/STOP")
                 time.sleep(5)
 
 
@@ -158,14 +158,15 @@ while True:
     if End:
         waitStop = True
         while waitStop:
-            ser.write(b"/STOP")
+            #ser.write(b"/STOP")
             time.sleep(1)
-            line = ser.readline()
+            #line = ser.readline()
             if int(pygame.time.get_ticks()/250)%2==0 and AlphaE>254:
                 EndTitle.set_alpha(125)
                     
             if int(pygame.time.get_ticks()/250)%2==1 and AlphaE>254:
                 EndTitle.set_alpha(255)
+            """
             if b"/STOP" in line:
                 ser.close()
                 waitStop = False  
@@ -173,16 +174,17 @@ while True:
                 ScoreTab.append(Score)
                 init()
                 WarnR.set_alpha(0)
-                #ser = serial.Serial('/dev/ttyACM0', 9600, timeout=0.05)        
+                #ser = serial.Serial('/dev/ttyACM0', 9600, timeout=0.05)
+            """        
     if not Start:
-        line = ser.readline()
+        #line = ser.readline()
     if Left or Right:
         if Left and Right:
             print("LES DEUX")
             if not Start and (b"/START" in line):
                 subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://barbot.local/win&PL=3"], start_new_session=True)
                 Start=True
-                ser.write(b"/START")
+                #ser.write(b"/START")
                 StartTimer=pygame.time. get_ticks()/1000
                 ScreenShake=15
                 #initialisation des questions
