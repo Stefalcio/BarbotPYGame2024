@@ -2,7 +2,7 @@ import pygame
 import math
 import random
 from sys import exit
-#import RPi.GPIO as GPIO 
+import RPi.GPIO as GPIO 
 import subprocess
 import serial
 import time
@@ -119,7 +119,7 @@ def rot_center(image, angle):
     rot_sprite = pygame.transform.rotate(image, angle)
     rot_sprite.get_rect().center = loc
     return rot_sprite
-"""
+
 def right_button(channel): 
     global Right
     if GPIO.input(3):
@@ -139,7 +139,7 @@ GPIO.setup(3, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.add_event_detect(3,GPIO.BOTH,callback=right_button)
 GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.add_event_detect(5,GPIO.BOTH,callback=left_button) 
-"""
+
 while True:
     dt=clock.tick(60)
         #ScreenShake
@@ -257,7 +257,7 @@ while True:
             ReponseX=-0.25*dt+ReponseX
             MReponseX=-0.25*dt+MReponseX
         if TimeLeft > 5:
-            ChronoTime = TFont3.render(str(TimeLeft-(5-NumeroQuestion)*10-5),False,(240,100,0))
+            ChronoTime = TFont3.render(str(max(TimeLeft-(5-NumeroQuestion)*10-5,0)),False,(240,100,0))
             ChronoKill = TFont2.render("Score = "+str(Score),False,(240,100,0))
             if Start:
                 display_text(screen, str(Question[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)]), (50,150), TFont5, (240,240,240), 280)
@@ -345,12 +345,14 @@ while True:
                     MReponseX=0
                 NumeroQuestion = 6
                 ChronoTime = TFont3.render(("0"),False,(240,100,0))
-                screen.blit(ChronoKill,ChronoKill.get_rect(center=(160,120)))
                 QuestionText = TFont5.render((""),False,(240,240,240))
                 ReponseA = TFont4.render((""),False,(240,240,240))
                 ReponseB = TFont4.render((""),False,(240,240,240))
                 ReponseC = TFont4.render((""),False,(240,240,240))
                 ReponseD = TFont4.render((""),False,(240,240,240))
+            if TimeLeft < 4:
+                screen.blit(ChronoKill,ChronoKill.get_rect(center=(160,120)))
+
 
     else:
         End=True
