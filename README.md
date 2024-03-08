@@ -1,1 +1,2 @@
 ﻿# BarbotPYGame2024
+QuiVeutBoarDesMillions est un jeu réalisé pour le Barbot. Un distributeur de boisson automatisé où le volume donné dépend du score du joueur. Le jeu a pour thème de QuiVeutGagnnerDesMillions. afin d'être en accord avec le thème choisi par l'Esisar pour le Challenge de l'étudiant 2024. Dans QuiVeutBoarDesMillions vous devez répondre au plus de questions possibles. Il a été fait en python avec la librairie pygame.
