@@ -17,9 +17,12 @@ clock = pygame.time.Clock()
 TFont = pygame.font.Font('Font/8-bit Arcade In.ttf',17)
 TFont3 = pygame.font.Font('Font/8-bit Arcade In.ttf',36)
 TFont2 = pygame.font.Font('Font/Kenney Mini Square.ttf',16)
+TFont4 = pygame.font.Font('Font/Kenney Mini Square.ttf',8)
+TFont5 = pygame.font.Font('Font/Kenney Mini Square.ttf',14)
 
 Title = pygame.image.load('Sprite\QuiVeutBoarDesMillionsLogo.png').convert_alpha()
 EndTitle = pygame.image.load('Sprite\QuiVeutBoarDesMillionsLogo.png').convert_alpha()
+Selector = pygame.image.load('Sprite\Selector.png').convert_alpha()
 BackGround= pygame.image.load('Sprite/QuiBoarDesMillions.png').convert()
 
 TimeLeft=30
@@ -42,7 +45,23 @@ TailleEcran=[640,480]
 SpeedJustMaxed=True
 TwoSecHasPassed=False
 Select=0
+ReponseX=-800
+MReponseX=-800
 #ActualScreen = pygame.display.set_mode(TailleEcran,pygame.FULLSCREEN)
+Reponse=[["Paris", "New York","Pekin", "La mer noire"],["Bien et toi","Ca va","Je suis fatigué","Je suis malade"],
+         ["STest1","Test2","Test3","Test4"],["STest1","Test2","Test3","Test4"],
+
+         ["MTest1","Test2","Test3","Test4"],["MTest1","Test2","Test3","Test4"],
+         ["MTest1","Test2","Test3","Test4"],["MTest1","Test2","Test3","Test4"],
+
+         ["DTest1","Test2","Test3","Test4"],["DTest1","Test2","Test3","Test4"],
+         ["DTest1","Test2","Test3","Test4"],["DTest1","Test2","Test3","Test4"]]
+BonneReponse=[0,0,0,0,1,1,1,1,2,2,2,2]
+Question=["Quelle est la capital du perou ?","Comment tu vas ?","Simple3","Simple4",
+          "Moyen1","Moyen2","Moyen3","Moyen4",
+          "Dur1","Dur2","Dur3","Dur4"]
+NumeroQuestion=0
+QuestionOffset=random.randint(0,3)
 #subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://barbot.local/win&PL=1"], start_new_session=True)
 Title=pygame.transform.scale(Title, (0,0))
 
@@ -55,7 +74,7 @@ def pipe_pick(QuestionNumber):
     return PipeId
 
 def init():
-    global AlphaT,AlphaE,Start,Left,Right,End,TimeLeft,Score,Select
+    global AlphaT,AlphaE,Start,Left,Right,End,TimeLeft,Score,Select,ReponseX,MReponseX,NumeroQuestion
     Left=False
     Right=False
     End=False
@@ -65,6 +84,9 @@ def init():
     AlphaE=0
     Start=False
     Select=0
+    ReponseX=-800
+    MReponseX=-800
+    NumeroQuestion=0
     #subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://barbot.local/win&PL=1"], start_new_session=True)
 
 
@@ -80,11 +102,6 @@ def moyenne(list):
 
 def lerp(a, b, t):
     return (1 - t) * a + t * b
-        
-def bam(Shaker, NewSpeed):
-    global ScreenShake, Speed
-    ScreenShake = Shaker
-    Speed = NewSpeed
 
 def rot_center(image, angle):
     loc = image.get_rect().center
@@ -166,6 +183,11 @@ while True:
                     
             if int(pygame.time.get_ticks()/250)%2==1 and AlphaE>254:
                 EndTitle.set_alpha(255)
+            
+            waitStop = False
+            time.sleep(2)
+            ScoreTab.append(Score)
+            init()
             """
             if b"/STOP" in line:
                 ser.close()
@@ -213,14 +235,111 @@ while True:
     if TimeLeft > 0:
         if Start:           
             #Compteur de quesion
-            TimeLeft = int(60 + StartTimer - pygame.time. get_ticks()/1000)
+            TimeLeft = int(71 + StartTimer - pygame.time. get_ticks()/1000)
             screen.blit(ChronoTime,ChronoTime.get_rect(midbottom=(160,272)))
-        ChronoTime = TFont3.render(str(TimeLeft),False,(240,100,0))
-        ChronoKill = TFont3.render(str(Score),False,(240,100,0))
+            screen.blit(ReponseA,ReponseA.get_rect(center=(100,240)))
+            screen.blit(ReponseB,ReponseB.get_rect(center=(240,240)))
+            screen.blit(ReponseC,ReponseC.get_rect(center=(100,288)))
+            screen.blit(ReponseD,ReponseD.get_rect(center=(240,288)))
+            screen.blit(QuestionText,QuestionText.get_rect(center=(160,175)))
+            screen.blit(BonneReponseText,BonneReponseText.get_rect(center=(ReponseX+480,115)))
+            screen.blit(MauvaiseReponseText,MauvaiseReponseText.get_rect(center=(MReponseX+480,115)))
+            screen.blit(Selector,Selector.get_rect(center=(92+Select%2*135,240+int(Select/2)*48)))
+            ReponseX=-0.25*dt+ReponseX
+            MReponseX=-0.25*dt+MReponseX
+        if TimeLeft > 5:
+            ChronoTime = TFont3.render(str(TimeLeft-(5-NumeroQuestion)*10-5),False,(240,100,0))
+            ChronoKill = TFont2.render("Score = "+str(Score),False,(240,100,0))
+            QuestionText = TFont5.render(str(Question[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)]),False,(240,240,240))
+            ReponseA = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)][0]),False,(240,240,240))
+            ReponseB = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)][1]),False,(240,240,240))
+            ReponseC = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)][2]),False,(240,240,240))
+            ReponseD = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)][3]),False,(240,240,240))
+        BonneReponseText = TFont3.render("Bonne réponse",False,(0,170,0))
+        MauvaiseReponseText = TFont3.render("Mauvaise réponse",False,(170,0,0))
+        if Start:
+            if TimeLeft < 55 and NumeroQuestion == 0:
+                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%4]:
+                    Score+=1
+                    print("Bonne réponse")
+                    ScreenShake=15
+                    ReponseX=0
+                else:
+                    print("Mauvaise réponse")
+                    ScreenShake=40
+                    MReponseX=0
+                NumeroQuestion = 1
+                QuestionOffset = random.randint(0,3)
+            if TimeLeft < 45 and NumeroQuestion == 1:
+                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%4]:
+                    Score+=1
+                    print("Bonne réponse")
+                    ScreenShake=15
+                    ReponseX=0
+                else:
+                    print("Mauvaise réponse")
+                    ScreenShake=40
+                    MReponseX=0
+                NumeroQuestion = 2
+                QuestionOffset = random.randint(0,3)
+            if TimeLeft < 35 and NumeroQuestion == 2:
+                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%4+4]:
+                    Score+=1
+                    print("Bonne réponse")
+                    ScreenShake=15
+                    ReponseX=0
+                else:
+                    print("Mauvaise réponse")
+                    ScreenShake=40
+                    MReponseX=0
+                NumeroQuestion = 3
+                QuestionOffset = random.randint(0,3)
+            if TimeLeft < 25 and NumeroQuestion == 3:
+                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%4+4]:
+                    Score+=1
+                    print("Bonne réponse")
+                    ScreenShake=15
+                    ReponseX=0
+                else:
+                    print("Mauvaise réponse")
+                    ScreenShake=40
+                    MReponseX=0
+                NumeroQuestion = 4
+                QuestionOffset = random.randint(0,3)
+            if TimeLeft < 15 and NumeroQuestion == 4:
+                if Select  == BonneReponse[(NumeroQuestion+QuestionOffset)%4+8]:
+                    Score+=1
+                    print("Bonne réponse")
+                    ScreenShake=15
+                    ReponseX=0
+                else:
+                    print("Mauvaise réponse")
+                    ScreenShake=40
+                    MReponseX=0
+                NumeroQuestion = 5
+                QuestionOffset = random.randint(0,3)
+            if TimeLeft < 5 and NumeroQuestion == 5:
+                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%4+8]:
+                    Score+=1
+                    print("Bonne réponse")
+                    ScreenShake=15
+                    ReponseX=0
+                else:
+                    print("Mauvaise réponse")
+                    ScreenShake=40
+                    MReponseX=0
+                NumeroQuestion = 6
+                ChronoTime = TFont3.render((""),False,(240,100,0))
+                QuestionText = TFont5.render((""),False,(240,240,240))
+                ReponseA = TFont4.render((""),False,(240,240,240))
+                ReponseB = TFont4.render((""),False,(240,240,240))
+                ReponseC = TFont4.render((""),False,(240,240,240))
+                ReponseD = TFont4.render((""),False,(240,240,240))
 
     else:
         End=True
-        AlphaE=255
+        AlphaE=255    
+        screen.blit(ChronoKill,ChronoKill.get_rect(center=(160,120)))
         #subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://barbot.local/win&PL=2"], start_new_session=True)
 
 
@@ -234,7 +353,7 @@ while True:
 
     #Title and End Vanish
     if Start:
-        AlphaT-=3
+        AlphaT-=20
     if AlphaT >=0:    
         Text1.set_alpha(AlphaT*2)
         Title.set_alpha(AlphaT*2)
@@ -243,9 +362,9 @@ while True:
         Instruct.set_alpha(AlphaT)
         Instruct2.set_alpha(AlphaT)
         MoyenneScore = TFont2.render("Score moyen:"+str(int(moyenne(ScoreTab)*10)/10),False,(240,100,0))
-        MoyenneScore.set_alpha(AlphaT)
-        screen.blit(MoyenneScore,MoyenneScore.get_rect(center=(160,263)))
-        screen.blit(Text1,Text1.get_rect(center=(160,120)))
+        MoyenneScore.set_alpha(AlphaT*2)
+        screen.blit(MoyenneScore,MoyenneScore.get_rect(center=(160,130)))
+        screen.blit(Text1,Text1.get_rect(center=(160,110)))
         screen.blit(Title,Title.get_rect(center=(160+5*math.sin(2*pygame.time. get_ticks()/1000),20+2.5*math.sin(6*pygame.time. get_ticks()/1000))))
         screen.blit(Instruct,Instruct.get_rect(center=(160,169+2*math.sin(6*pygame.time. get_ticks()/1000))))
         screen.blit(Instruct2,Instruct2.get_rect(center=(160,185+2*math.sin(6*pygame.time. get_ticks()/1000))))
@@ -257,7 +376,7 @@ while True:
     if int(pygame.time.get_ticks()/250)%2==1 and AlphaE>254:
         EndTitle.set_alpha(255)
     """
-    screen.blit(EndTitle,EndTitle.get_rect(center=(160,120)))
+    #screen.blit(EndTitle,EndTitle.get_rect(center=(160,115)))
     #pygame.draw.rect(screen,(0,0,0),pygame.Rect(Player_x+8, Player_y-Speed-10,16,32))
     ActualScreen.fill((0,0,0))
     ActualScreen.blit(pygame.transform.scale(screen, (ActualScreen.get_rect().width,ActualScreen.get_rect().height)), (8, 0))
