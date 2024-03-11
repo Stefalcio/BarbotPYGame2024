@@ -20,9 +20,9 @@ TFont2 = pygame.font.Font('Font/Kenney Mini Square.ttf',16)
 TFont4 = pygame.font.Font('Font/Kenney Mini Square.ttf',8)
 TFont5 = pygame.font.Font('Font/Kenney Mini Square.ttf',14)
 
-Title = pygame.image.load('Sprite\QuiVeutBoarDesMillionsLogo.png').convert_alpha()
-EndTitle = pygame.image.load('Sprite\QuiVeutBoarDesMillionsLogo.png').convert_alpha()
-Selector = pygame.image.load('Sprite\Selector.png').convert_alpha()
+Title = pygame.image.load('Sprite/QuiVeutBoarDesMillionsLogo.png').convert_alpha()
+EndTitle = pygame.image.load('Sprite/QuiVeutBoarDesMillionsLogo.png').convert_alpha()
+Selector = pygame.image.load('Sprite/Selector.png').convert_alpha()
 BackGround= pygame.image.load('Sprite/QuiBoarDesMillions.png').convert()
 
 TimeLeft=30
