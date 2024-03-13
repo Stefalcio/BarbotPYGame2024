@@ -15,7 +15,7 @@ clock = pygame.time.Clock()
 #ser = serial.Serial('/dev/ttyACM0', 9600, timeout=0.05)
 
 TFont = pygame.font.Font('Font/8-bit Arcade In.ttf',17)
-TFont3 = pygame.font.Font('Font/8-bit Arcade In.ttf',36)
+TFont3 = pygame.font.Font('Font/8-bit Arcade In.ttf',38)
 TFont2 = pygame.font.Font('Font/Kenney Mini Square.ttf',16)
 TFont4 = pygame.font.Font('Font/Kenney Mini Square.ttf',8)
 TFont5 = pygame.font.Font('Font/Kenney Mini Square.ttf',14)
@@ -47,21 +47,16 @@ TwoSecHasPassed=False
 Select=0
 ReponseX=-800
 MReponseX=-800
-#ActualScreen = pygame.display.set_mode(TailleEcran,pygame.FULLSCREEN)
-Reponse=[["Paris", "New York","Pekin", "La mer noire"],["Bien et toi","Ca va","Je suis fatigué","Je suis malade"],
-         ["STest1","Test2","Test3","Test4"],["STest1","Test2","Test3","Test4"],
-
-         ["MTest1","Test2","Test3","Test4"],["MTest1","Test2","Test3","Test4"],
-         ["MTest1","Test2","Test3","Test4"],["MTest1","Test2","Test3","Test4"],
-
-         ["DTest1","Test2","Test3","Test4"],["DTest1","Test2","Test3","Test4"],
-         ["DTest1","Test2","Test3","Test4"],["DTest1","Test2","Test3","Test4"]]
-BonneReponse=[0,0,0,0,1,1,1,1,2,2,2,2]
-Question=["Quelle est la capital du perou ?","Comment tu vas ?","Simple3","Simple4",
-          "Moyen1","Moyen2","Moyen3","Moyen4",
-          "Dur1","Dur2","Dur3","Dur4"]
+ActualScreen = pygame.display.set_mode(TailleEcran,pygame.FULLSCREEN)
+Reponse=[["ECEMA", "DROIT ECO", "ESISAR", "IUT"], ["Le GC", "L AVE", "Valence", "La Drome"], ["Japon", "Italie", "France", "Portugal"], ["Les Alcooliques", "Les Mineurs", "Les Vieux", "Les Volcans"], ["111", "113", "115", "117"], ["12", "13", "14", "15"], ["128L", "142L", "168L", "182L"], ["78 ans", "80 ans", "82 ans", "85 ans"], ["1948", "1956", "1962", "1968"], ["5", "6", "7", "8"], ["65 ans", "70 ans", "75 ans", "80 ans"], ["1000°C", "1300°C", "1600°C", "1900°C"]]
+BonneReponse=[2, 1, 0, 3, 3, 0, 0, 3, 1, 2, 0, 0]
+Question=["Quelle BDE a le plus de victoires au Challenge de l'Etudiant ?", "Qui organise le Challenge ?", 
+          "Quelle est le pays avec la plus grande proportion de vieux ?", "Si on te demande, c est quoi le thème de l'Esisar ?", 
+          "Quel âge avait la doyenne française ?", "Combien d étoiles à le BDE de l'Esisar ?", "En 1960, combien un français buvait-il en moyenne de litre de vin par an ?", 
+          "Quel est l'âge moyen d entrée à l'Ehpad ?", "Jusqu à quelle année, le vin était servi à la cantine ?", "Combien de couches y a-t-il dans le modèle OSI ?", 
+          "Quel est l âge moyen des personnes atteintes d'incontinence fécale ?", "Quelle est la température dans la chambre magmatique d'un volcan ?"]
 NumeroQuestion=0
-QuestionOffset=random.randint(0,3)
+QuestionOffset=random.randint(1,2)
 #subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://barbot.local/win&PL=1"], start_new_session=True)
 Title=pygame.transform.scale(Title, (0,0))
 
@@ -72,6 +67,22 @@ def pipe_pick(QuestionNumber):
     if PipeId > 5:
         PipeId=5
     return PipeId
+
+def display_text(surface, text, pos, font, color, size):
+    collection = [word.split(' ') for word in text.splitlines()]
+    space = font.size(' ')[0]
+    x,y = pos
+    for lines in collection:
+        for words in lines:
+            word_surface = font.render(words, False, color)
+            word_width , word_height = word_surface.get_size()
+            if x + word_width >= size:
+                x = pos[0]
+                y += word_height
+            surface.blit(word_surface, (x,y))
+            x += word_width + space
+        x = pos[0]
+        y += word_height
 
 def init():
     global AlphaT,AlphaE,Start,Left,Right,End,TimeLeft,Score,Select,ReponseX,MReponseX,NumeroQuestion
@@ -221,11 +232,9 @@ while True:
             if Left and not End and Start:
                 Select=(Select-1)%4
                 Left=False
-                print(Select)
             if Right and not End and Start:
                 Select=(Select+1)%4
                 Right=False
-                print(Select)
     #else:
         #if not End:
             #print("RIEN")
@@ -237,11 +246,11 @@ while True:
             #Compteur de quesion
             TimeLeft = int(71 + StartTimer - pygame.time. get_ticks()/1000)
             screen.blit(ChronoTime,ChronoTime.get_rect(midbottom=(160,272)))
-            screen.blit(ReponseA,ReponseA.get_rect(center=(100,240)))
-            screen.blit(ReponseB,ReponseB.get_rect(center=(240,240)))
-            screen.blit(ReponseC,ReponseC.get_rect(center=(100,288)))
-            screen.blit(ReponseD,ReponseD.get_rect(center=(240,288)))
-            screen.blit(QuestionText,QuestionText.get_rect(center=(160,175)))
+            #screen.blit(ReponseA,ReponseA.get_rect(center=(100,240)))
+            #screen.blit(ReponseB,ReponseB.get_rect(center=(240,240)))
+            #screen.blit(ReponseC,ReponseC.get_rect(center=(100,288)))
+            #screen.blit(ReponseD,ReponseD.get_rect(center=(240,288)))
+            #screen.blit(QuestionText,QuestionText.get_rect(center=(160,175)))
             screen.blit(BonneReponseText,BonneReponseText.get_rect(center=(ReponseX+480,115)))
             screen.blit(MauvaiseReponseText,MauvaiseReponseText.get_rect(center=(MReponseX+480,115)))
             screen.blit(Selector,Selector.get_rect(center=(92+Select%2*135,240+int(Select/2)*48)))
@@ -250,6 +259,12 @@ while True:
         if TimeLeft > 5:
             ChronoTime = TFont3.render(str(TimeLeft-(5-NumeroQuestion)*10-5),False,(240,100,0))
             ChronoKill = TFont2.render("Score = "+str(Score),False,(240,100,0))
+            if Start:
+                display_text(screen, str(Question[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)]), (50,150), TFont5, (240,240,240), 280)
+                display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)][0]), (100-32,240-10), TFont4, (240,240,240), 140)
+                display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)][1]), (240-37,240-10), TFont4, (240,240,240), 280)
+                display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)][2]), (100-32,288-10), TFont4, (240,240,240), 140)
+                display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)][3]), (240-37,288-10), TFont4, (240,240,240), 280)
             QuestionText = TFont5.render(str(Question[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)]),False,(240,240,240))
             ReponseA = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)][0]),False,(240,240,240))
             ReponseB = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%4+4*math.floor(NumeroQuestion/2)][1]),False,(240,240,240))
@@ -269,7 +284,7 @@ while True:
                     ScreenShake=40
                     MReponseX=0
                 NumeroQuestion = 1
-                QuestionOffset = random.randint(0,3)
+                QuestionOffset = random.randint(1,2)
             if TimeLeft < 45 and NumeroQuestion == 1:
                 if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%4]:
                     Score+=1
@@ -281,7 +296,7 @@ while True:
                     ScreenShake=40
                     MReponseX=0
                 NumeroQuestion = 2
-                QuestionOffset = random.randint(0,3)
+                QuestionOffset = random.randint(1,2)
             if TimeLeft < 35 and NumeroQuestion == 2:
                 if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%4+4]:
                     Score+=1
@@ -293,7 +308,7 @@ while True:
                     ScreenShake=40
                     MReponseX=0
                 NumeroQuestion = 3
-                QuestionOffset = random.randint(0,3)
+                QuestionOffset = random.randint(1,2)
             if TimeLeft < 25 and NumeroQuestion == 3:
                 if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%4+4]:
                     Score+=1
@@ -305,7 +320,7 @@ while True:
                     ScreenShake=40
                     MReponseX=0
                 NumeroQuestion = 4
-                QuestionOffset = random.randint(0,3)
+                QuestionOffset = random.randint(1,2)
             if TimeLeft < 15 and NumeroQuestion == 4:
                 if Select  == BonneReponse[(NumeroQuestion+QuestionOffset)%4+8]:
                     Score+=1
@@ -317,8 +332,8 @@ while True:
                     ScreenShake=40
                     MReponseX=0
                 NumeroQuestion = 5
-                QuestionOffset = random.randint(0,3)
-            if TimeLeft < 5 and NumeroQuestion == 5:
+                QuestionOffset = random.randint(1,2)
+            if TimeLeft < 6 and NumeroQuestion == 5:
                 if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%4+8]:
                     Score+=1
                     print("Bonne réponse")
@@ -329,7 +344,8 @@ while True:
                     ScreenShake=40
                     MReponseX=0
                 NumeroQuestion = 6
-                ChronoTime = TFont3.render((""),False,(240,100,0))
+                ChronoTime = TFont3.render(("0"),False,(240,100,0))
+                screen.blit(ChronoKill,ChronoKill.get_rect(center=(160,120)))
                 QuestionText = TFont5.render((""),False,(240,240,240))
                 ReponseA = TFont4.render((""),False,(240,240,240))
                 ReponseB = TFont4.render((""),False,(240,240,240))
