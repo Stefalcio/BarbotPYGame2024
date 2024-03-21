@@ -26,7 +26,7 @@ BackGround= pygame.image.load('Sprite/QuiBoarDesMillions.png').convert()
 
 TimeLeft=30
 Score=0
-Text1 = TFont2.render('Répond aux 6 questions pour ta boisson',False,(240,100,0)).convert_alpha()
+Text1 = TFont4.render('Répond aux 6 questions pour ta boisson',False,(240,100,0)).convert_alpha()
 
 pygame.mouse.set_visible(False)
 
