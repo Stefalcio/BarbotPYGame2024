@@ -26,7 +26,7 @@ BackGround= pygame.image.load('Sprite/QuiBoarDesMillions.png').convert()
 
 TimeLeft=30
 Score=0
-Text1 = TFont4.render('Répond aux 6 questions pour ta boisson',False,(240,100,0)).convert_alpha()
+Text1 = TFont5.render('Réponds aux 6 questions pour ta boisson',False,(240,100,0)).convert_alpha()
 
 pygame.mouse.set_visible(False)
 
@@ -246,7 +246,7 @@ while True:
     if TimeLeft > 0:
         if Start:           
             #Compteur de quesion
-            TimeLeft = int(71 + StartTimer - pygame.time. get_ticks()/1000)
+            TimeLeft = int(96 + StartTimer - pygame.time. get_ticks()/1000)
             screen.blit(ChronoTime,ChronoTime.get_rect(midbottom=(160,272)))
             screen.blit(BonneReponseText,BonneReponseText.get_rect(center=(ReponseX+480,115)))
             screen.blit(MauvaiseReponseText,MauvaiseReponseText.get_rect(center=(MReponseX+480,115)))
@@ -254,7 +254,7 @@ while True:
             ReponseX=-0.25*dt+ReponseX
             MReponseX=-0.25*dt+MReponseX
         if TimeLeft > 5:
-            ChronoTime = TFont3.render(str(max(TimeLeft-(5-NumeroQuestion)*10-5,0)),False,(240,100,0))
+            ChronoTime = TFont3.render(str(max(TimeLeft-(5-NumeroQuestion)*15-5,0)),False,(240,100,0))
             if Start:
                 display_text(screen, str(Question[(NumeroQuestion+QuestionOffset)%14+14*math.floor(NumeroQuestion/2)]), (50,150), TFont5, (240,240,240), 280)
                 display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%14+14*math.floor(NumeroQuestion/2)][0]), (100-32,240-10), TFont4, (240,240,240), 140)
@@ -269,7 +269,7 @@ while True:
         BonneReponseText = TFont3.render("Bonne réponse",False,(0,170,0))
         MauvaiseReponseText = TFont3.render("Mauvaise réponse",False,(170,0,0))
         if Start:
-            if TimeLeft < 55 and NumeroQuestion == 0:
+            if TimeLeft < 80 and NumeroQuestion == 0:
                 if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%14]:
                     Score+=1
                     ScreenShake=14
@@ -291,7 +291,7 @@ while True:
                 if ((NumeroQuestion+QuestionOffset)%14) in QuestionAsked:
                     QuestionOffset += 1
 
-            if TimeLeft < 45 and NumeroQuestion == 1:
+            if TimeLeft < 65 and NumeroQuestion == 1:
                 if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%14]:
                     Score+=1
                     ScreenShake=14
@@ -313,7 +313,7 @@ while True:
                 if ((NumeroQuestion+QuestionOffset)%14+14) in QuestionAsked:
                     QuestionOffset += 1
 
-            if TimeLeft < 35 and NumeroQuestion == 2:
+            if TimeLeft < 50 and NumeroQuestion == 2:
                 if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%14+14]:
                     Score+=1
                     ScreenShake=14
@@ -334,7 +334,7 @@ while True:
                 if ((NumeroQuestion+QuestionOffset)%14+14) in QuestionAsked:
                     QuestionOffset += 1
 
-            if TimeLeft < 25 and NumeroQuestion == 3:
+            if TimeLeft < 35 and NumeroQuestion == 3:
                 if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%14+14]:
                     Score+=1
                     ScreenShake=14
@@ -355,7 +355,7 @@ while True:
                 if ((NumeroQuestion+QuestionOffset)%14+28) in QuestionAsked:
                     QuestionOffset += 1
                 
-            if TimeLeft < 14 and NumeroQuestion == 4:
+            if TimeLeft < 19 and NumeroQuestion == 4:
                 if Select  == BonneReponse[(NumeroQuestion+QuestionOffset)%14+28]:
                     Score+=1
                     ScreenShake=14
