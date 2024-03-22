@@ -404,7 +404,7 @@ while True:
                 if TimeLeft > 3:
                     trigger = True
 
-            if trigger and ((77 < TimeLeft <= 78) or 62 < TimeLeft <= 63 or 47 < TimeLeft <= 48 or 32 < TimeLeft <= 33 or 12 < TimeLeft <= 13 or  3 < TimeLeft <= 5):
+            if trigger and ((77 < TimeLeft <= 78) or 62 < TimeLeft <= 63 or 47 < TimeLeft <= 48 or 32 < TimeLeft <= 33 or 17 < TimeLeft <= 18 or  3 < TimeLeft <= 5):
                 subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://wled.local/win&PL=3"], start_new_session=True)
                 trigger = False
 
