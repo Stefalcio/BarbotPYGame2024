@@ -48,9 +48,15 @@ ReponseX=-800
 MReponseX=-800
 trigger = False
 ActualScreen = pygame.display.set_mode(TailleEcran,pygame.FULLSCREEN)
-Reponse=[["1939", "1989", "1992", "2035"], ["32ème", "33ème", "34ème", "35ème"], ["Le GC", "La Cave", "Le Cercle", "Le Carré"], ["Fil Rouge", "Morpion", "Relai 1,2,3,4", "Va Chercher"], ["Valence", "La CAVE", "Le GC", "L'AVE"], ["10", "11", "12", "13"], ["Cercle de l'AVE", "Contre l'AVE", "Caca Aka Vaka Eka", "La pièce en sous-sol là"], ["Les Alcooliques", "Les Mineurs", "Les Vieux", "Les Volcans"], ["Un week-end bien arrosé", "Une fête sans s'arrêter", "Un apéro un peu trop grand", "Une compétition toujours gagnée"], ["Alcooliques", "Champions", "Génies", "Infatiguables"], ["10", "11", "12", "50"], ["Francaise", "Italienne", "Norvégienne", "Japonaise"], ["Corée du Sud", "Japon", "Italie", "Finlande"], ["Vin Rouge", "Vin Blanc", "Vin Rosé", "Bière Blonde"], ["La Cave", "L’ISAR", "Le CEDE", "FC Châteauroux"], ["1", "3", "34", "51"], ["Au bar", "En trappage", "A l’Esisar", "A l’EHPAD"], ["128 L/adulte", "142 L/adulte", "168 L/adulte", "188 L/adulte"], ["0", "26", "54", "82"], ["0, c’est de l'eau", "8", "69", "1000° dans la soirée"], ["108 ans", "112 ans", "115 ans", "117 ans"], ["15 %", "17 %", "20 %", "22 %"], ["78 ans", "80 ans", "82 ans", "85 ans"], ["5 milliard", "10 milliard", "15 milliard", "30 milliard"], ["32 ans", "38 ans", "42 ans", "48 ans"], ["L’Alcool", "Poulpy", "La Victoire", "Les Inf’"], ["Du piment d'espelette", "Des champignons", "Des prostituées", "Du cacaaaa"], ["Le goulot d'étranglement", "Le passage étroit", "La trachée gazeuse", "Le sphincter"], ["1948", "1956", "1962", "1970"], ["500 euros", "1000 euros", "2000 euros", "4000 euros"], ["20,5", "23", "27,5", "32"], ["65 ans", "70 ans", "75 ans", "80 ans"], ["Esisar - VALENCE INP", "ESISAR - Grenoble INP", "Grenoble INP - Esisar", "Valence INP - Esisar"], ["T'es enceinte de 3 mois", "T'es enceinte de 6 mois", "On décale ton bassin", "Tu jouis 3 fois"], ["98", "128", "168", "200"], ["5", "6", "7", "8"], ["Kette", "Alonzo", "Lorenzo", "Ninho"], ["715MHz", "815MHz", "915MHz", "1015MHz"], ["500 mega ohms", "1200 mega ohms", "2000 mega ohms", "3750 mega ohms"], ["2556", "5789", "7324", "9293"], ["1000 degrée", "1300 degrée", "1600 degrée", "1900 degrée"], ["CAMILLE VERNET", "IUT", "DROIT-ECO", "ESISAR"]]
-BonneReponse=[1,  2 ,  2 ,  1 ,  3 ,  3 ,  1 ,  3 ,  2 ,  0 ,  2 ,  3 ,  1 ,  0 ,  2 ,  1 ,  3 ,  0 ,  3 ,  1 ,  3 ,  2 ,  3 ,  2 ,  0 ,  1 ,  1 ,  0 ,  1 ,  3 ,  0 ,  0 ,  2 ,  0 ,  1 ,  2 ,  1 ,  2 ,  2 ,  3 ,  0 ,  3 ]
-Question = ["Quelle est l'année de la 1re édition du Challenge de l'Étudiant ?", "Quel est le numéro de l'édition 2024 du Challenge de l'Étudiant ?", "Quel BDE a le plus de victoires au Challenge de l'Étudiant ?", "Quel est le nouveau jeu du Challenge de l'Étudiant 2024 ?", "Qui organise le Challenge ?", "Combien d'équipes sont présentes au Challenge de l'Étudiant 2024 ?", "La CAVE, c'est ?", "Si on te demande, c'est quoi le thème de l'Esisar ?", "Dans les chants Esisariens, comment est décrit le challenge ?", "Dans ses chants, comment sont décrits les étudiants de l'Esisar ?", "Combien d'étoiles à le BDE de l'Esisar ?", "Quelle est la nationalité de la doyenne du monde ?", "Quel est le pays avec la plus grande proportion de vieux ?", "Quel alcool est le plus consommé des + de 65 ans en France ?", "Qui a gagné le 1er challenge de l'Étudiant ?", "Quel est le record de victoires successives au Challenge de l'Étudiant ?", "Où peux-tu trouver la Cave à Valence ?", "En 1960, en moyenne combien un Français buvait-il de litres de vin par an ?", "Combien y-t-il eu de comas éthyliques lors du salon de l'agriculture 2023 ?", "À combien de degrés d'alcool est la clairette de Die, cuvée Obsidienne ?", "Quel âge avait la doyenne française ?", "Quel est le pourcentage de la population française ayant plus de 65 ans ?", "Quel est l'âge moyen à l'entrée en EHPAD ?", "Quel est le déficit des retraites en France ?", "À partir de quel âge un homme commence à avoir des cheveux blancs ?", "Dans les chants Esisariens, pour qui les étudiants ont le coeur qui bat ?", "Dans les chants Esisariens, avec quoi assaisonner un sanglier ?", "Quel est le nom donné à la partie la plus étroite du conduit d'un volcan ?", "Jusqu'à quelle année on servait du vin à la cantine ?", "Combien coûte un dentier haut de gamme ?", "En moyenne, combien de dents a une personne de 80 ans ?","Quel est l'âge moyen des personnes atteintes d'incontinence fécale ?", "Quelle est la bonne charte graphique ?", "Dans le rap de l'Esisar, on vous baise tellement fort que ?", "Combien de coupes à ramener l'Esisar depuis la création du Challenge ?", "Combien de couches y a-t-il dans le modèle OSI ?", "Dans les chants Esisariens, que répondre à la question : Qui est là ?", "Quelle fréquence utilisent les antennes RFID ?", "Quelle est la résistance moyenne du corps humain en mega ohms ?", "À ce jour, combien y a-t-il de RFC ?", "Quelle est la température dans la chambre magmatique d'un volcan ?", "De quelle école était l'étudiant ayant créé la Cave ?"]
+Question =["Quel est l'ancien nom de l'association Unifly ?", "Quel est le numéro de l'édition 2024 de la Journée de l’Aéronautique ?", "Combien d'aéronefs sont présents en statique cette année ?", "A quelle école était rattaché le club Esifly ?", "Combien de pistes possèdent l'aéroport de Valence Chabeuil ?", "À qui appartient le hangar où se déroule l'événement ?", "Comment s'appelle l'organisme français qui rassemble tous les ULM ?", "Comment sont remorqués les planeurs ?", "Comment s'appelle la partie goudronnée qui rejoint la piste ?", "Comment d'associations rassemble le pôle aviation de loisir à Valence ?", "Comment s'appelle la base militaire sur l'aéroport de Valence ?", "Quel est le nom de l'actuel président d'Unifly ?", "Quel est le nom de l'hélicoptère présent à cette édition ?", "Quel est le nom du premier avion électrique certifié ?", "Quel est le nom du champion du monde de voltige aérienne 2022 ?", "Quelle force armée contrôle le GAMSTAT ?", "Quelle est l'année de création de l'association Unifly ?", "Qui est le créateur de l'association Unifly ?", "Combien de mètres mesure la piste principale de l'aéroport ?", "Quelle est l'altitude de la piste ?", "Quelle est la hauteur de la tour de contrôle de Valence ?", "Pour quelle raison a été construit l'aéroport de Valence Chabeuil ?", "De quelle année date la première ligne régulière à Valence Chabeuil ?", "En 2019, combien d'atterrissages et décollages ont été effectué ?"]
+
+Reponse = [["Etufly", "LikeFly", "Esifly", "IutFly"], ["1ere", "2eme", "3eme", "4eme"], ["3", "4", "5", "6"], ["Grenoble INP Phelma", "Grenoble INP Esisar", "IUT Valence", "UGA Sciences"], ["1", "2", "3", "4"], ["Valence Planeur", "Valence ULM", "Valence Voleur", "Valeur Rêveur"], ["FFVOL", "FFPLUM", "FFAIL", "FFBEC"], ["Par un ULM", "Par une voiture", "Par oiseaux", "Par Zeus"], ["Plane Way", "Landing Way", "Approach Way", "Taxi Way"],  ["1", "2", "3", "4"], ["GAMSTAT", "GAMVAL", "GAMGNAM", "GAMVERT"], ["Jérémy Boissel", "Jérémy Boeing", "Jérémy Breguet", "Jérémy Buffett"], ["AS532", "EC665", "H225M", "NH90"], ["VoltAero Cassio", "Velis Electro", "eFlyer", "Sun Flyer"], ["Florent O'Connor", "Florent O'Brien", "Florent Oddon", "Florent Olsen"], ["Armée de l'air", "Armée de terre", "Marine", "Gendarmerie"], ["2017", "2018", "2019", "2020"], ["Guilhem Roland", "Guilhem Robinson", "Guilhem Reynolds", "Guilhem Ryan"], ["1500m", "1800m", "2100m", "2400m"], ["450 pieds", "475 pieds", "500 pieds", "525 pieds"], ["22 mètres", "27 mètres", "32 mètres", "37 mètres"], ["WW1", "WW2", "JO 1968", "Coupé aéro 1910"], ["1959", "1964", "1969", "1974"], ["20000", "24000", "28000", "32000"]]
+
+BonneReponse = [2, 3, 2, 1, 2, 0, 1, 0, 3, 2, 0, 0, 3, 1, 2, 1, 3, 0, 2, 3, 1, 1, 2, 3]
+
+#Reponse=[["1939", "1989", "1992", "2035"], ["32ème", "33ème", "34ème", "35ème"], ["Le GC", "La Cave", "Le Cercle", "Le Carré"], ["Fil Rouge", "Morpion", "Relai 1,2,3,4", "Va Chercher"], ["Valence", "La CAVE", "Le GC", "L'AVE"], ["10", "11", "12", "13"], ["Cercle de l'AVE", "Contre l'AVE", "Caca Aka Vaka Eka", "La pièce en sous-sol là"], ["Les Alcooliques", "Les Mineurs", "Les Vieux", "Les Volcans"], ["Un week-end bien arrosé", "Une fête sans s'arrêter", "Un apéro un peu trop grand", "Une compétition toujours gagnée"], ["Alcooliques", "Champions", "Génies", "Infatiguables"], ["10", "11", "12", "50"], ["Francaise", "Italienne", "Norvégienne", "Japonaise"], ["Corée du Sud", "Japon", "Italie", "Finlande"], ["Vin Rouge", "Vin Blanc", "Vin Rosé", "Bière Blonde"], ["La Cave", "L’ISAR", "Le CEDE", "FC Châteauroux"], ["1", "3", "34", "51"], ["Au bar", "En trappage", "A l’Esisar", "A l’EHPAD"], ["128 L/adulte", "142 L/adulte", "168 L/adulte", "188 L/adulte"], ["0", "26", "54", "82"], ["0, c’est de l'eau", "8", "69", "1000° dans la soirée"], ["108 ans", "112 ans", "115 ans", "117 ans"], ["15 %", "17 %", "20 %", "22 %"], ["78 ans", "80 ans", "82 ans", "85 ans"], ["5 milliard", "10 milliard", "15 milliard", "30 milliard"], ["32 ans", "38 ans", "42 ans", "48 ans"], ["L’Alcool", "Poulpy", "La Victoire", "Les Inf’"], ["Du piment d'espelette", "Des champignons", "Des prostituées", "Du cacaaaa"], ["Le goulot d'étranglement", "Le passage étroit", "La trachée gazeuse", "Le sphincter"], ["1948", "1956", "1962", "1970"], ["500 euros", "1000 euros", "2000 euros", "4000 euros"], ["20,5", "23", "27,5", "32"], ["65 ans", "70 ans", "75 ans", "80 ans"], ["Esisar - VALENCE INP", "ESISAR - Grenoble INP", "Grenoble INP - Esisar", "Valence INP - Esisar"], ["T'es enceinte de 3 mois", "T'es enceinte de 6 mois", "On décale ton bassin", "Tu jouis 3 fois"], ["98", "128", "168", "200"], ["5", "6", "7", "8"], ["Kette", "Alonzo", "Lorenzo", "Ninho"], ["715MHz", "815MHz", "915MHz", "1015MHz"], ["500 mega ohms", "1200 mega ohms", "2000 mega ohms", "3750 mega ohms"], ["2556", "5789", "7324", "9293"], ["1000 degrée", "1300 degrée", "1600 degrée", "1900 degrée"], ["CAMILLE VERNET", "IUT", "DROIT-ECO", "ESISAR"]]
+#BonneReponse=[1,  2 ,  2 ,  1 ,  3 ,  3 ,  1 ,  3 ,  2 ,  0 ,  2 ,  3 ,  1 ,  0 ,  2 ,  1 ,  3 ,  0 ,  3 ,  1 ,  3 ,  2 ,  3 ,  2 ,  0 ,  1 ,  1 ,  0 ,  1 ,  3 ,  0 ,  0 ,  2 ,  0 ,  1 ,  2 ,  1 ,  2 ,  2 ,  3 ,  0 ,  3 ]
+#Question = ["Quelle est l'année de la 1re édition du Challenge de l'Étudiant ?", "Quel est le numéro de l'édition 2024 du Challenge de l'Étudiant ?", "Quel BDE a le plus de victoires au Challenge de l'Étudiant ?", "Quel est le nouveau jeu du Challenge de l'Étudiant 2024 ?", "Qui organise le Challenge ?", "Combien d'équipes sont présentes au Challenge de l'Étudiant 2024 ?", "La CAVE, c'est ?", "Si on te demande, c'est quoi le thème de l'Esisar ?", "Dans les chants Esisariens, comment est décrit le challenge ?", "Dans ses chants, comment sont décrits les étudiants de l'Esisar ?", "Combien d'étoiles à le BDE de l'Esisar ?", "Quelle est la nationalité de la doyenne du monde ?", "Quel est le pays avec la plus grande proportion de vieux ?", "Quel alcool est le plus consommé des + de 65 ans en France ?", "Qui a gagné le 1er challenge de l'Étudiant ?", "Quel est le record de victoires successives au Challenge de l'Étudiant ?", "Où peux-tu trouver la Cave à Valence ?", "En 1960, en moyenne combien un Français buvait-il de litres de vin par an ?", "Combien y-t-il eu de comas éthyliques lors du salon de l'agriculture 2023 ?", "À combien de degrés d'alcool est la clairette de Die, cuvée Obsidienne ?", "Quel âge avait la doyenne française ?", "Quel est le pourcentage de la population française ayant plus de 65 ans ?", "Quel est l'âge moyen à l'entrée en EHPAD ?", "Quel est le déficit des retraites en France ?", "À partir de quel âge un homme commence à avoir des cheveux blancs ?", "Dans les chants Esisariens, pour qui les étudiants ont le coeur qui bat ?", "Dans les chants Esisariens, avec quoi assaisonner un sanglier ?", "Quel est le nom donné à la partie la plus étroite du conduit d'un volcan ?", "Jusqu'à quelle année on servait du vin à la cantine ?", "Combien coûte un dentier haut de gamme ?", "En moyenne, combien de dents a une personne de 80 ans ?","Quel est l'âge moyen des personnes atteintes d'incontinence fécale ?", "Quelle est la bonne charte graphique ?", "Dans le rap de l'Esisar, on vous baise tellement fort que ?", "Combien de coupes à ramener l'Esisar depuis la création du Challenge ?", "Combien de couches y a-t-il dans le modèle OSI ?", "Dans les chants Esisariens, que répondre à la question : Qui est là ?", "Quelle fréquence utilisent les antennes RFID ?", "Quelle est la résistance moyenne du corps humain en mega ohms ?", "À ce jour, combien y a-t-il de RFC ?", "Quelle est la température dans la chambre magmatique d'un volcan ?", "De quelle école était l'étudiant ayant créé la Cave ?"]
 NumeroQuestion=0
 QuestionOffset=random.randint(0,14)
 QuestionAsked=[]
@@ -256,23 +262,23 @@ while True:
         if TimeLeft > 5:
             ChronoTime = TFont3.render(str(max(TimeLeft-(5-NumeroQuestion)*15-5,0)),False,(240,100,0))
             if Start:
-                display_text(screen, str(Question[(NumeroQuestion+QuestionOffset)%14+14*math.floor(NumeroQuestion/2)]), (50,150), TFont5, (240,240,240), 280)
-                display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%14+14*math.floor(NumeroQuestion/2)][0]), (100-32,240-10), TFont4, (240,240,240), 140)
-                display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%14+14*math.floor(NumeroQuestion/2)][1]), (240-37,240-10), TFont4, (240,240,240), 280)
-                display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%14+14*math.floor(NumeroQuestion/2)][2]), (100-32,288-10), TFont4, (240,240,240), 140)
-                display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%14+14*math.floor(NumeroQuestion/2)][3]), (240-37,288-10), TFont4, (240,240,240), 280)
-            QuestionText = TFont5.render(str(Question[(NumeroQuestion+QuestionOffset)%14+14*math.floor(NumeroQuestion/2)]),False,(240,240,240))
-            ReponseA = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%14+14*math.floor(NumeroQuestion/2)][0]),False,(240,240,240))
-            ReponseB = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%14+14*math.floor(NumeroQuestion/2)][1]),False,(240,240,240))
-            ReponseC = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%14+14*math.floor(NumeroQuestion/2)][2]),False,(240,240,240))
-            ReponseD = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%14+14*math.floor(NumeroQuestion/2)][3]),False,(240,240,240))
+                display_text(screen, str(Question[(NumeroQuestion+QuestionOffset)%8+8*math.floor(NumeroQuestion/2)]), (50,150), TFont5, (240,240,240), 280)
+                display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%8+8*math.floor(NumeroQuestion/2)][0]), (100-32,240-10), TFont4, (240,240,240), 140)
+                display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%8+8*math.floor(NumeroQuestion/2)][1]), (240-37,240-10), TFont4, (240,240,240), 280)
+                display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%8+8*math.floor(NumeroQuestion/2)][2]), (100-32,288-10), TFont4, (240,240,240), 140)
+                display_text(screen, str(Reponse[(NumeroQuestion+QuestionOffset)%8+8*math.floor(NumeroQuestion/2)][3]), (240-37,288-10), TFont4, (240,240,240), 280)
+            QuestionText = TFont5.render(str(Question[(NumeroQuestion+QuestionOffset)%8+8*math.floor(NumeroQuestion/2)]),False,(240,240,240))
+            ReponseA = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%8+8*math.floor(NumeroQuestion/2)][0]),False,(240,240,240))
+            ReponseB = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%8+8*math.floor(NumeroQuestion/2)][1]),False,(240,240,240))
+            ReponseC = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%8+8*math.floor(NumeroQuestion/2)][2]),False,(240,240,240))
+            ReponseD = TFont4.render(str(Reponse[(NumeroQuestion+QuestionOffset)%8+8*math.floor(NumeroQuestion/2)][3]),False,(240,240,240))
         BonneReponseText = TFont3.render("Bonne réponse",False,(0,170,0))
         MauvaiseReponseText = TFont3.render("Mauvaise réponse",False,(170,0,0))
         if Start:
             if TimeLeft < 80 and NumeroQuestion == 0:
-                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%14]:
+                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%8]:
                     Score+=1
-                    ScreenShake=14
+                    ScreenShake=8
                     ReponseX=0
                     subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://wled.local/win&PL=4"], start_new_session=True)
                     ser.write(str.encode("/EV="+str(pipe_pick(NumeroQuestion))))
@@ -281,20 +287,20 @@ while True:
                     MReponseX=0
                     subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://wled.local/win&PL=5"], start_new_session=True)
                 
-                QuestionAsked.append((NumeroQuestion+QuestionOffset)%14)
+                QuestionAsked.append((NumeroQuestion+QuestionOffset)%8)
 
                 NumeroQuestion = 1
 
                 trigger = True
                 QuestionOffset = random.randint(8,45)
 
-                if ((NumeroQuestion+QuestionOffset)%14) in QuestionAsked:
+                if ((NumeroQuestion+QuestionOffset)%8) in QuestionAsked:
                     QuestionOffset += 1
 
             if TimeLeft < 65 and NumeroQuestion == 1:
-                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%14]:
+                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%8]:
                     Score+=1
-                    ScreenShake=14
+                    ScreenShake=8
                     ReponseX=0
                     subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://wled.local/win&PL=4"], start_new_session=True)
                     ser.write(str.encode("/EV="+str(pipe_pick(NumeroQuestion))))
@@ -304,19 +310,19 @@ while True:
                     MReponseX=0
                     subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://wled.local/win&PL=5"], start_new_session=True)
                     
-                QuestionAsked.append((NumeroQuestion+QuestionOffset)%14+14)
+                QuestionAsked.append((NumeroQuestion+QuestionOffset)%8+8)
 
                 NumeroQuestion = 2
                 trigger = True
                 QuestionOffset = random.randint(8,45)
 
-                if ((NumeroQuestion+QuestionOffset)%14+14) in QuestionAsked:
+                if ((NumeroQuestion+QuestionOffset)%8+8) in QuestionAsked:
                     QuestionOffset += 1
 
             if TimeLeft < 50 and NumeroQuestion == 2:
-                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%14+14]:
+                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%8+8]:
                     Score+=1
-                    ScreenShake=14
+                    ScreenShake=8
                     ReponseX=0
                     subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://wled.local/win&PL=4"], start_new_session=True)
                     ser.write(str.encode("/EV="+str(pipe_pick(NumeroQuestion))))
@@ -325,19 +331,19 @@ while True:
                     MReponseX=0
                     subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://wled.local/win&PL=5"], start_new_session=True)
                     
-                QuestionAsked.append((NumeroQuestion+QuestionOffset)%14+14)
+                QuestionAsked.append((NumeroQuestion+QuestionOffset)%8+8)
 
                 NumeroQuestion = 3
                 trigger = True
                 QuestionOffset = random.randint(0,45)
 
-                if ((NumeroQuestion+QuestionOffset)%14+14) in QuestionAsked:
+                if ((NumeroQuestion+QuestionOffset)%8+8) in QuestionAsked:
                     QuestionOffset += 1
 
             if TimeLeft < 35 and NumeroQuestion == 3:
-                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%14+14]:
+                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%8+8]:
                     Score+=1
-                    ScreenShake=14
+                    ScreenShake=8
                     ReponseX=0
                     subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://wled.local/win&PL=4"], start_new_session=True)
                     ser.write(str.encode("/EV="+str(pipe_pick(NumeroQuestion))))
@@ -346,19 +352,19 @@ while True:
                     MReponseX=0
                     subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://wled.local/win&PL=5"], start_new_session=True)
                     
-                QuestionAsked.append((NumeroQuestion+QuestionOffset)%14+14)
+                QuestionAsked.append((NumeroQuestion+QuestionOffset)%8+8)
 
                 NumeroQuestion = 4
                 trigger = True
                 QuestionOffset = random.randint(8,45)
 
-                if ((NumeroQuestion+QuestionOffset)%14+28) in QuestionAsked:
+                if ((NumeroQuestion+QuestionOffset)%8+2*8) in QuestionAsked:
                     QuestionOffset += 1
                 
             if TimeLeft < 20 and NumeroQuestion == 4:
-                if Select  == BonneReponse[(NumeroQuestion+QuestionOffset)%14+28]:
+                if Select  == BonneReponse[(NumeroQuestion+QuestionOffset)%8+2*8]:
                     Score+=1
-                    ScreenShake=14
+                    ScreenShake=8
                     ReponseX=0
                     subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://wled.local/win&PL=4"], start_new_session=True)
                     ser.write(str.encode("/EV="+str(pipe_pick(NumeroQuestion))))
@@ -367,20 +373,20 @@ while True:
                     MReponseX=0
                     subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://wled.local/win&PL=5"], start_new_session=True)
                     
-                QuestionAsked.append((NumeroQuestion+QuestionOffset)%14+28)
+                QuestionAsked.append((NumeroQuestion+QuestionOffset)%8+2*8)
 
                 NumeroQuestion = 5
                 trigger = True
                 QuestionOffset = random.randint(8,45)
 
-                if ((NumeroQuestion+QuestionOffset)%14+28) in QuestionAsked:
+                if ((NumeroQuestion+QuestionOffset)%8+2*8) in QuestionAsked:
                     QuestionOffset += 1
                 
             if TimeLeft < 6 and NumeroQuestion == 5:
                  
-                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%14+28]:
+                if Select == BonneReponse[(NumeroQuestion+QuestionOffset)%8+2*8]:
                     Score+=1
-                    ScreenShake=14
+                    ScreenShake=8
                     ReponseX=0
                     subprocess.Popen(["curl", "--silent", "-o /dev/null", "http://wled.local/win&PL=4"], start_new_session=True)
                     ser.write(str.encode("/EV="+str(pipe_pick(NumeroQuestion))))
